@@ -1,15 +1,18 @@
 package com.swirlingLeaves.step_definitions;
 
+import com.swirlingLeaves.pages.LoginPage;
+import com.swirlingLeaves.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class US12_Repairs_StepDefs_IC {
 
+    LoginPage loginPage = new LoginPage();
+
     @Given("User is logged in as a Sales manager")
     public void user_is_logged_in_as_a_sales_manager() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        loginPage.login(ConfigurationReader.getProperty("sales_manager_email"), ConfigurationReader.getProperty("sales_manager_password"));
     }
     @When("User clicks to the {string} option from the Menu")
     public void user_clicks_to_the_option_from_the_menu(String string) {
@@ -33,8 +36,7 @@ public class US12_Repairs_StepDefs_IC {
     }
     @Given("User is logged in as a POS manager")
     public void user_is_logged_in_as_a_pos_manager() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        loginPage.login(ConfigurationReader.getProperty("pos_manager_email"), ConfigurationReader.getProperty("pos_manager_password"));
     }
 
 
