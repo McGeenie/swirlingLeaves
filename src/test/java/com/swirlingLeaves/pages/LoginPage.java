@@ -1,7 +1,5 @@
 package com.swirlingLeaves.pages;
 
-
-import com.swirlingLeaves.utilities.Driver;
 import com.swirlingLeaves.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,17 +11,14 @@ public class LoginPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id="prependedInput")
+    @FindBy(id="login")
     public WebElement userName;
 
-
-
-    @FindBy(id="prependedInput2")
+    @FindBy(id="password")
     public WebElement password;
 
-    @FindBy(name = "_submit")
+    @FindBy(xpath = "//button[.='Log in']")
     public WebElement submit;
-
 
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
