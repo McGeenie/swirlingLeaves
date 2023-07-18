@@ -17,7 +17,7 @@ public class InboxPage_DW {
     public void checkModules(int numberOfModules){
         List<WebElement> modules = Driver.getDriver().findElements(By.xpath("//li[@style=\"display: block;\"]"));
         Assert.assertEquals(modules.size(),numberOfModules);
-        System.out.println(modules.size());
+        System.out.println("Number of Modules found: " + modules.size());
     }
 
 }
