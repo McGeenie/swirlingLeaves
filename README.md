@@ -1,7 +1,7 @@
 ## About the Project
 swirlingLeaves is our group Narvia's Sprint Implementation project where 13 of us QA Testers are assigned individual User Stories.
 
-We will manally test these stories in JIRA X-Ray then automate them in our IDE- IntelliJ.
+We will manually test these stories in JIRA X-Ray then automate them in our IDE- IntelliJ.
 
 This sprint is only one week: 7/17/2023-7/21/2023. We are using Agile-Scrum methodology, starting with the Grooming/Planning meeting, 
 followed by daily Stand Up meetings, and ending with the Demo/Retrospective meeting. 
