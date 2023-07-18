@@ -1,3 +1,4 @@
+@MH
 Feature: Access the main modules as a POS Manager
 
   Scenario: Verify access to 22 Modules by POS Manager
