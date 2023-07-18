@@ -13,10 +13,8 @@ public class MainModulesPage_MH {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//li[@style='display: block;']")
     public List<WebElement> MainModules;
-
-
 
 
 }
