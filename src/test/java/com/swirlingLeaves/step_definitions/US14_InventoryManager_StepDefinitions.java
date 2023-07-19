@@ -1,19 +1,15 @@
 package com.swirlingLeaves.step_definitions;
 
-import com.swirlingLeaves.pages.InboxPage;
+import com.swirlingLeaves.pages.InboxPage_DW;
 import com.swirlingLeaves.pages.LoginPage;
 import com.swirlingLeaves.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.sl.In;
-
-import java.lang.reflect.InaccessibleObjectException;
 
 public class US14_InventoryManager_StepDefinitions {
 
     LoginPage loginPage = new LoginPage();
-    InboxPage inboxPage = new InboxPage();
+    InboxPage_DW inboxPageDW = new InboxPage_DW();
 
     @Given("User is logged in as an Inventory manager")
     public void user_is_logged_in_as_an_inventory_manager() {
@@ -24,6 +20,6 @@ public class US14_InventoryManager_StepDefinitions {
     }
     @When("User should have access to {int} modules")
     public void user_should_have_access_to_modules(Integer int1) {
-        inboxPage.checkModules(16);
+        inboxPageDW.checkModules(16);
     }
 }

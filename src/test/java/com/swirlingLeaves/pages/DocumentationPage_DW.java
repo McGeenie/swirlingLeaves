@@ -13,4 +13,15 @@ public class DocumentationPage_DW {
     @FindBy (xpath = "//section[@class='o_content_fw_banner']")
     public WebElement mainHeader;
 
+    @FindBy (xpath ="//h2//a[@href='applications.html']" )
+    public WebElement userDocsHeader;
+
+    @FindBy (xpath = "//h2//a[@href='administration.html']")
+    public WebElement installAndMaintainHeader;
+
+    @FindBy (xpath = "//h2//a[@href='developer.html']" )
+    public WebElement developerHeader;
+
+    @FindBy (xpath = "//h2//a[@href='contributing.html']")
+    public WebElement contributingHeader;
 }

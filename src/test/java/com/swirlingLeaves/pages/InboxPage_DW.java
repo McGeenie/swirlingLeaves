@@ -9,9 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class InboxPage {
+public class InboxPage_DW {
 
-    public InboxPage(){
+    public InboxPage_DW(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -20,5 +20,11 @@ public class InboxPage {
         Assert.assertEquals(modules.size(),numberOfModules);
         System.out.println(modules.size());
     }
+
+    @FindBy (xpath = "//span[@class='oe_topbar_name']")
+    public WebElement userProfileButton;
+
+    @FindBy (xpath = "//a[@data-menu='documentation']")
+    public WebElement dropdownMenuDocumentationOption;
 
 }
