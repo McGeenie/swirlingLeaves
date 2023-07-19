@@ -1,5 +1,8 @@
 @B29G31-245
-Feature: Default
+Feature: Sales Quotations Functionality
+
+  Agile User Story: As a POS  & sales manager,
+  I should be able to get correct information on the Sales page.
 
 
   @B29G31-238
