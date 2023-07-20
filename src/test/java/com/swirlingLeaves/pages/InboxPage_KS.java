@@ -19,10 +19,19 @@ public class InboxPage_KS {
     @FindBy(xpath = "//div[.='Loading']")
     public WebElement loadingBar;
 
+    @FindBy(xpath = "//a[@data-menu='484']")
+    public WebElement pointOfSaleTab;
+
     public void clickSalesTab(){
 
         BrowserUtils.waitForInvisibilityOf(loadingBar);
         salesTab.click();
+    }
+
+    public void clickPointOfSaleTab(){
+
+        BrowserUtils.waitForInvisibilityOf(loadingBar);
+        pointOfSaleTab.click();
     }
 
 

@@ -50,5 +50,7 @@ public class US07_StepDefs_KS {
 
         Assert.assertTrue(quotationsPage_ks.tableRowContaining(quotationNumber).isDisplayed());
     }
+
+
 }
 
