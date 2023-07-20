@@ -1,6 +1,6 @@
 package com.swirlingLeaves.step_definitions;
 
-import com.swirlingLeaves.pages.InboxPage;
+import com.swirlingLeaves.pages.InboxPage_GS;
 import com.swirlingLeaves.pages.LoginPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +9,7 @@ import org.junit.Assert;
 public class US01_Login_Step_definitions {
 
     LoginPage loginPage = new LoginPage();
-    InboxPage inboxPage = new InboxPage();
+    InboxPage_GS inboxPage_gs = new InboxPage_GS();
     @When("user enters {string} username and {string} password")
     public void user_enters_username_and_password(String username, String password) {
         loginPage.userName.sendKeys(username);
@@ -21,7 +21,7 @@ public class US01_Login_Step_definitions {
     }
     @Then("user should gain access to their inbox")
     public void user_should_gain_access_to_their_inbox() {
-        Assert.assertTrue(inboxPage.InboxTag.isDisplayed());
+        Assert.assertTrue(inboxPage_gs.inboxTag.isDisplayed());
     }
 
 
@@ -41,7 +41,7 @@ public class US01_Login_Step_definitions {
     }
     @Then("user should see the following message {string}")
     public void user_should_see_the_following_message(String string) {
-
-    }
+        loginPage.errorMessagePFOTF();
+        }
 
 }

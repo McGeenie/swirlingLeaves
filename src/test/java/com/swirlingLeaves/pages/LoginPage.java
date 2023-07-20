@@ -1,5 +1,6 @@
 package com.swirlingLeaves.pages;
 
+import com.swirlingLeaves.utilities.ConfigurationReader;
 import com.swirlingLeaves.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -41,6 +42,17 @@ public class LoginPage {
         userName.sendKeys(ConfigurationReader.getProperty("sales_manager_email"));
         password.sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
         submit.click();
+    }
+
+    @FindBy(xpath= "//input[@required='required']")
+    public WebElement pleaseFillOutThisFieldErrorMessage;
+    public void errorMessagePFOTF(){
+        boolean errorMessageDisplayed;
+        if(pleaseFillOutThisFieldErrorMessage.isEnabled() && (userName.getText().isEmpty() || password.getText().isEmpty())){
+            errorMessageDisplayed = true;
+        }else{
+            errorMessageDisplayed = false;
+        }
     }
 
 }
