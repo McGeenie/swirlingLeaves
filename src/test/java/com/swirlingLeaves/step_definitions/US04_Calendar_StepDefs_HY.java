@@ -17,10 +17,10 @@ public class US04_Calendar_StepDefs_HY {
     CalendarPage_HY calender = new CalendarPage_HY();
 
 
-    @Given("User clicks on {string}")
-    public void userClicksOn(String string) {
 
 
+    @Given("User clicks on {string} module")
+    public void userClicksOnModule(String arg0) {
         BrowserUtils.sleep(2);
 
         calender.calendarModule.click();
@@ -28,14 +28,12 @@ public class US04_Calendar_StepDefs_HY {
     }
 
 
-
-
     @When("User is on {string} page")
     public void user_is_on_page(String string) {
 
         BrowserUtils.sleep(1);
         String actualTitle = Driver.getDriver().getTitle();
-        String expectedTitle = String.valueOf(Driver.getDriver().getTitle().contains(string));
+        String expectedTitle = "Meetings - Odoo";
 
         Assert.assertEquals(actualTitle,expectedTitle);
     }
@@ -59,7 +57,7 @@ public class US04_Calendar_StepDefs_HY {
 
         Driver.getDriver().switchTo().window(createEventWindowHandle);
 
-        calender.eventSummaryInputBox.sendKeys("Delta1");
+        calender.eventSummaryInputBox.sendKeys(string);
 
 
     }
