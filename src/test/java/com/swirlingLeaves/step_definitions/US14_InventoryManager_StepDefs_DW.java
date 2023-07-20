@@ -6,10 +6,10 @@ import com.swirlingLeaves.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 
-public class US14_InventoryManager_StepDefinitions {
+public class US14_InventoryManager_StepDefs_DW {
 
     LoginPage loginPage = new LoginPage();
-    InboxPage_DW inboxPageDW = new InboxPage_DW();
+    InboxPage_DW inboxPage = new InboxPage_DW();
 
     @Given("User is logged in as an Inventory manager")
     public void user_is_logged_in_as_an_inventory_manager() {
@@ -20,6 +20,6 @@ public class US14_InventoryManager_StepDefinitions {
     }
     @When("User should have access to {int} modules")
     public void user_should_have_access_to_modules(Integer int1) {
-        inboxPageDW.checkModules(16);
+        inboxPage.checkModules(16);
     }
 }
