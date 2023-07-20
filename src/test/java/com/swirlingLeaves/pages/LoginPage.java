@@ -23,14 +23,24 @@ public class LoginPage {
     @FindBy(xpath = "//p[@class='alert alert-danger']")
     public WebElement wrongLoginPasswordMessage;
 
-    @FindBy(xpath = "")
-    public WebElement pleaseFillInThisFieldMessage;
 
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);
         submit.click();
         // verification that we logged
+    }
+
+    public void posManagerLogin(){
+        userName.sendKeys(ConfigurationReader.getProperty("pos_manager_email"));
+        password.sendKeys(ConfigurationReader.getProperty("pos_manager_password"));
+        submit.click();
+    }
+    public void salesManagerLogin(){
+
+        userName.sendKeys(ConfigurationReader.getProperty("sales_manager_email"));
+        password.sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
+        submit.click();
     }
 
 }
