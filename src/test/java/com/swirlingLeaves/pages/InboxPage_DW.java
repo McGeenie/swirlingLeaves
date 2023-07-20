@@ -21,10 +21,10 @@ public class InboxPage_DW {
         System.out.println("Number of Modules found: " + modules.size());
     }
 
-    @FindBy(xpath = "//li[.='#Inbox']")
-    public WebElement InboxTag;
-
     @FindBy(xpath = "//span[@class='oe_topbar_name']")
-    public WebElement accountHolderName;
+    public WebElement userProfileButton;
+
+    @FindBy (xpath = "//a[@data-menu='documentation']")
+    public WebElement dropdownMenuDocumentationOption;
 
 }
