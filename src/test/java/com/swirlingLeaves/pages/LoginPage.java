@@ -20,6 +20,12 @@ public class LoginPage {
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement submit;
 
+    @FindBy(xpath = "//p[@class='alert alert-danger']")
+    public WebElement wrongLoginPasswordMessage;
+
+    @FindBy(xpath = "")
+    public WebElement pleaseFillInThisFieldMessage;
+
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
         password.sendKeys(passwordStr);

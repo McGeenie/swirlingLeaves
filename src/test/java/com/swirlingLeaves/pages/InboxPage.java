@@ -21,4 +21,10 @@ public class InboxPage {
         System.out.println(modules.size());
     }
 
+    @FindBy(xpath = "//li[.='#Inbox']")
+    public WebElement InboxTag;
+
+    @FindBy(xpath = "//span[@class='oe_topbar_name']")
+    public WebElement accountHolderName;
+
 }
