@@ -6,7 +6,7 @@ Feature: Default
   Scenario: Verify user is directed to the "Calendar" page succesfully
 
     Given User is logged in as a POS manager
-    Given User clicks on "calendarModule"
+    Given User clicks on "Calendar" module
     When User is on "Meetings" page
 
   Scenario: Verify user can create events on time boxes
