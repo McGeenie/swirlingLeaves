@@ -22,19 +22,23 @@ public class CalendarPage_HY {
 
     public WebElement timeBox;
 
-    @FindBy(xpath = "//input[@name='name']")
+    @FindBy(xpath = "//div[@class='form-group']/input")
 
     public WebElement eventSummaryInputBox;
 
-    @FindBy(xpath = "//button[@fdprocessedid='pozty']")
+    @FindBy(xpath = "//button[@class='btn btn-sm btn-primary']")
 
     public WebElement createButton;
 
-    @FindBy(xpath = "//div[contains(text(),'Delta1')]")
+    @FindBy(xpath = "//li[contains(text(),'Meetings')]")
 
-    public WebElement confirmSummary;
+    public WebElement calendarPageHeader;
 
-    @FindBy(xpath = "//td/label[@for='o_field_input_81']" )
+    @FindBy(xpath = "//a[@class='fc-day-grid-event fc-h-event fc-event fc-start fc-end fc-draggable fc-resizable o_calendar_color_6']")
+
+    public WebElement eventOnTimeBox;
+
+    @FindBy(xpath = "//h4[contains(text(),'Open: ')]" )
     public WebElement popUpEventInformation;
 
 
