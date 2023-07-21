@@ -2,9 +2,12 @@ package com.swirlingLeaves.pages;
 
 import com.swirlingLeaves.utilities.Driver;
 import org.checkerframework.checker.nullness.qual.MonotonicNonNull;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.Random;
 
 public class NewCustomerPage_ED {
     public NewCustomerPage_ED (){
@@ -35,6 +38,20 @@ public class NewCustomerPage_ED {
 
     @FindBy(xpath = "//h1/span")
     public WebElement nameDisplayed;
+
+    @FindBy(xpath = "(//div[@class='oe_kanban_global_click o_res_partner_kanban o_kanban_record'])[1]")
+    public WebElement anyCustomer;
+
+    public void anyCustomerRand(){
+        Random randomNum = new Random();
+        int choseNum = randomNum.nextInt(80);
+        Driver.getDriver().findElement(By.xpath("(//div[@class='oe_kanban_global_click o_res_partner_kanban o_kanban_record'])["+choseNum+"]")).click();
+
+    }
+
+    @FindBy(xpath = "//button[@accesskey='a']")
+    public WebElement editButton;
+
 
 
 }

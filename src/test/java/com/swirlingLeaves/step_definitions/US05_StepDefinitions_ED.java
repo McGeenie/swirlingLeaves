@@ -58,6 +58,22 @@ public class US05_StepDefinitions_ED {
         newCustomerPageEd.nameDisplayed.isDisplayed();
             Assert.assertEquals(name,newCustomerPageEd.nameDisplayed.getText());
     }
+
+    @And("user should click on any customer name")
+    public void userShouldClickOnAnyCustomerName() {
+
+        newCustomerPageEd.anyCustomerRand();
+        BrowserUtils.sleep(5);
+        //newCustomerPageEd.anyCustomer.
+
+    }
+
+    @Then("user should click on the edit button and all the box will be editable")
+    public void userShouldClickOnTheEditButtonAndAllTheBoxWillBeEditable() {
+        BrowserUtils.sleep(5);
+        newCustomerPageEd.editButton.click();
+    }
+
 }
 
 
