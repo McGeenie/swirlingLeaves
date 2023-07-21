@@ -21,6 +21,9 @@ public class LoginPage {
     @FindBy(xpath = "//button[.='Log in']")
     public WebElement submit;
 
+    @FindBy(xpath = "//p[@class='alert alert-danger']")
+    public WebElement wrongLoginPasswordMessage;
+
 
     public void login(String userNameStr, String passwordStr) {
         userName.sendKeys(userNameStr);
@@ -39,6 +42,17 @@ public class LoginPage {
         userName.sendKeys(ConfigurationReader.getProperty("sales_manager_email"));
         password.sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
         submit.click();
+    }
+
+    @FindBy(xpath= "//input[@required='required']")
+    public WebElement pleaseFillOutThisFieldErrorMessage;
+    public void errorMessagePFOTF(){
+        boolean errorMessageDisplayed;
+        if(pleaseFillOutThisFieldErrorMessage.isEnabled() && (userName.getText().isEmpty() || password.getText().isEmpty())){
+            errorMessageDisplayed = true;
+        }else{
+            errorMessageDisplayed = false;
+        }
     }
 
 }

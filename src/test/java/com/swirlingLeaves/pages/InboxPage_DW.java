@@ -4,6 +4,7 @@ import com.swirlingLeaves.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
@@ -19,5 +20,11 @@ public class InboxPage_DW {
         Assert.assertEquals(modules.size(),numberOfModules);
         System.out.println("Number of Modules found: " + modules.size());
     }
+
+    @FindBy(xpath = "//span[@class='oe_topbar_name']")
+    public WebElement userProfileButton;
+
+    @FindBy (xpath = "//a[@data-menu='documentation']")
+    public WebElement dropdownMenuDocumentationOption;
 
 }
