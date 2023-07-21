@@ -12,7 +12,7 @@ Feature: Creation of new customer functionality
     And user should see the name "Galileo" displayed
 
   @US05_wip
-  Scenario: Verify Sales Manager can create a new customer
+  Scenario: Verify Sales Manager can edit all the box
     Given user is logged in as a sales manager in the log in page
     Then user should click on the sales module
     And user should click on the customers module
