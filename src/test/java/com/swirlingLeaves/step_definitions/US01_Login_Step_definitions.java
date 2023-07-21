@@ -5,6 +5,8 @@ import com.swirlingLeaves.pages.LoginPage;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.devtools.v85.indexeddb.model.Key;
 
 public class US01_Login_Step_definitions {
 
@@ -44,4 +46,8 @@ public class US01_Login_Step_definitions {
         loginPage.errorMessagePFOTF();
         }
 
+    @Then("user presses the ENTER key")
+    public void user_Presses_The_ENTER_Key() {
+        loginPage.submit.sendKeys(Keys.ENTER);
+    }
 }

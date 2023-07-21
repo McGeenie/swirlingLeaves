@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = "com/swirlingLeaves/step_definitions",
-        dryRun = true,
+        dryRun = false,
         tags = "@US01Login",
         publish = true //generating a report with public link
 )
