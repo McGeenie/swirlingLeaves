@@ -1,4 +1,4 @@
-@US01Login
+@B29G31-206
 Feature: User should be able to log in using the correct credentials
 
   User Story: As POS and CRM manager, I should be able to Login with valid credentials.
@@ -10,9 +10,20 @@ Feature: User should be able to log in using the correct credentials
 
 
   @B29G31-203
-  Scenario Outline: Positive Login as POS
+  Scenario Outline: Positive Login with clicking
     When user enters "<username>" username and "<password>" password
     Then user clicks on the Log in button
+    Then user should gain access to their inbox
+
+    Examples:
+      | username                    | password         |
+      | posmanager55@info.com       | posmanager       |
+      | eventscrmmanager12@info.com | eventscrmmanager |
+
+  @B29G31-264
+  Scenario Outline: Positive Login with pressing ENTER
+    When user enters "<username>" username and "<password>" password
+    Then user presses the ENTER key
     Then user should gain access to their inbox
 
     Examples:
