@@ -1,4 +1,4 @@
-@US01Login
+@B29G31-206
 Feature: User should be able to log in using the correct credentials
 
   User Story: As POS and CRM manager, I should be able to Login with valid credentials.
