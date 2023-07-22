@@ -15,18 +15,13 @@ public class US07_StepDefs_KS {
     InboxPage_KS inboxPage_ks = new InboxPage_KS();
     QuotationsPage_KS quotationsPage_ks = new QuotationsPage_KS();
 
-    @Given("POS Manager is logged in and on the inbox page")
-    public void pos_manager_is_logged_in_and_on_the_inbox_page() {
+    @Given("{string} Manager is logged in and on the inbox page")
+    public void managerIsLoggedInAndOnTheInboxPage(String userType) {
 
-        loginPage.posManagerLogin();
-
-    }
-    @Given("Sales Manager is logged in and on the inbox page")
-    public void salesManagerIsLoggedInAndOnTheInboxPage() {
-
-        loginPage.salesManagerLogin();
+        loginPage.login(userType);
 
     }
+
     @Then("User clicks the Sales tab on the top of page and is launched to Quotations page")
     public void userClicksTheSalesTabOnTheTopOfPageAndIsLaunchedToQuotationsPage() {
 
@@ -50,6 +45,7 @@ public class US07_StepDefs_KS {
 
         Assert.assertTrue(quotationsPage_ks.tableRowContaining(quotationNumber).isDisplayed());
     }
+
 
 
 }
