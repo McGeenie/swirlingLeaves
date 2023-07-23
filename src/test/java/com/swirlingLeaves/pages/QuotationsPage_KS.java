@@ -24,6 +24,9 @@ public class QuotationsPage_KS {
 
 
     public int actualNumberOfColumns() {
+
+
+
         List<WebElement> allColumns = Driver.getDriver().findElements(By.xpath("//tr/th[@class='o_column_sortable']"));
 
         return allColumns.size();
@@ -38,6 +41,7 @@ public class QuotationsPage_KS {
 
     public WebElement tableRowContaining
             (String quotationNumber) {
+
 
         WebElement result = Driver.getDriver().findElement(By.xpath("//td[.='" + quotationNumber + "']"));
 

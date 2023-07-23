@@ -36,14 +36,29 @@ public class LoginPage {
 
         switch (userType){
 
-            case "POS Manager":
+            case "POS":
                 userName.sendKeys(ConfigurationReader.getProperty("pos_manager_email"));
                 password.sendKeys(ConfigurationReader.getProperty("pos_manager_password"));
                 submit.click();
                 break;
-            case "Sales Manager":
+            case "Sales":
                 userName.sendKeys(ConfigurationReader.getProperty("sales_manager_email"));
                 password.sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
+                submit.click();
+                break;
+            case "CRM":
+                userName.sendKeys(ConfigurationReader.getProperty("crm_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("crm_manager_password"));
+                submit.click();
+                break;
+            case "Inventory":
+                userName.sendKeys(ConfigurationReader.getProperty("inventory_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("inventory_manager_password"));
+                submit.click();
+                break;
+            case "Expense":
+                userName.sendKeys(ConfigurationReader.getProperty("expenses_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("expenses_manager_password"));
                 submit.click();
                 break;
         }

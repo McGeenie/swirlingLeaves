@@ -388,6 +388,7 @@ public class BrowserUtils {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].removeAttribute('style', 'background: yellow; border: 2px solid red;');", element);
     }
 
+
     /**
      * Checks or unchecks given checkbox
      *
