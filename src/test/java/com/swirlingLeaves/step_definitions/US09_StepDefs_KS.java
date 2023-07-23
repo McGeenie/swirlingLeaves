@@ -16,11 +16,12 @@ public class US09_StepDefs_KS {
 
     LoginPage loginPage = new LoginPage();
 
-    @Given("{string} is logged in and on the inbox page")
-    public void isLoggedInAndOnTheInboxPage(String userType) {
+    @Given("{string} Manager is logged in and on the inbox page")
+    public void managerIsLoggedInAndOnTheInboxPage(String userType) {
 
         loginPage.login(userType);
     }
+
 
     @Then("User clicks Point of Sale tab at top of page and is launched to Point of Sale page")
     public void user_clicks_point_of_sale_tab_at_top_of_page_and_is_launched_to_point_of_sale_page() {
@@ -60,5 +61,6 @@ public class US09_StepDefs_KS {
 
         Assert.assertTrue(ordersPage_kc.actionDropDownContains(wordDelete, wordExport));
     }
+
 
 }
