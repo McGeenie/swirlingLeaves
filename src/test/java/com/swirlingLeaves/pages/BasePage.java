@@ -10,9 +10,9 @@ import org.openqa.selenium.WebElement;
 
 public abstract class BasePage {
 
-    public WebElement userNameInputBox = Driver.getDriver().findElement(By.id("login"));
-    public WebElement passwordInputBox = Driver.getDriver().findElement(By.id("password"));
-    public WebElement submitButton = Driver.getDriver().findElement(By.xpath("//button[.='Log in']"));
+    protected WebElement userNameInputBox = Driver.getDriver().findElement(By.id("login"));
+    protected WebElement passwordInputBox = Driver.getDriver().findElement(By.id("password"));
+    protected WebElement submitButton = Driver.getDriver().findElement(By.xpath("//button[.='Log in']"));
 
     public void login(String userType) {
 
