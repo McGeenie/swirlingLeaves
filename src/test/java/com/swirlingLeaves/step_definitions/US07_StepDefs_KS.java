@@ -1,6 +1,8 @@
 package com.swirlingLeaves.step_definitions;
 
-import com.swirlingLeaves.pages.BasePage;
+
+import com.swirlingLeaves.pages.InboxPage_KS;
+import com.swirlingLeaves.pages.LoginPage;
 import com.swirlingLeaves.pages.QuotationsPage_KS;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -9,21 +11,22 @@ import org.junit.Assert;
 
 
 
-public class US07_StepDefs_KS extends BasePage {
+public class US07_StepDefs_KS{
 
+    LoginPage loginPage = new LoginPage();
+    InboxPage_KS inboxPage_ks = new InboxPage_KS();
     QuotationsPage_KS quotationsPage_ks = new QuotationsPage_KS();
 
     @Given("{string} manager is logged in and on the inbox page")
     public void managerIsLoggedInAndOnTheInboxPage(String userType) {
 
-        login(userType);
+        loginPage.login(userType);
 
     }
     @Then("User clicks the {string} tab on the top of page and is launched to Quotations page")
     public void userClicksTheTabOnTheTopOfPageAndIsLaunchedToQuotationsPage(String sales) {
 
-
-        clickNavBarHeaderTab(sales);
+        inboxPage_ks.clickNavBarHeaderTab(sales);
     }
 
     @And("User sees actual number of columns is equal to expected number of {int} columns on the page")

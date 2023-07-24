@@ -5,8 +5,11 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
 
-public class US09_StepDefs_KS extends BasePage {
+public class US09_StepDefs_KS{
 
+    LoginPage loginPage = new LoginPage();
+
+    InboxPage_KS inboxPage_ks = new InboxPage_KS();
     PointOfSalePage_KS pointOfSalePage_ks = new PointOfSalePage_KS();
     OrdersPage_KS ordersPage_kc = new OrdersPage_KS();
 
@@ -14,13 +17,14 @@ public class US09_StepDefs_KS extends BasePage {
     @Given("{string} Manager is logged in and on the inbox page")
     public void managerIsLoggedInAndOnTheInboxPage(String userType) {
 
-        login(userType);
+        loginPage.login(userType);
+
     }
 
     @Then("User clicks {string} tab at top of page and is launched to Point of Sale page")
     public void userClicksTabAtTopOfPageAndIsLaunchedToPointOfSalePage(String pointOfSale) {
 
-        clickNavBarHeaderTab(pointOfSale);
+        inboxPage_ks.clickNavBarHeaderTab(pointOfSale);
     }
 
     @Then("User clicks Orders tab, under Dashboard Orders, and is launched to Orders page")

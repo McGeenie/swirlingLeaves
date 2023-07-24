@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class QuotationsPage_KS {
+public class QuotationsPage_KS extends BasePage{
 
     public QuotationsPage_KS() {
         PageFactory.initElements(Driver.getDriver(), this);
