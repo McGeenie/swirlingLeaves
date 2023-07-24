@@ -8,15 +8,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 
-public abstract class BasePage{
+public abstract class BasePage {
 
-    WebElement userNameInputBox = Driver.getDriver().findElement(By.id("login"));
-    WebElement passwordInputBox = Driver.getDriver().findElement(By.id("password"));
-    WebElement submitButton = Driver.getDriver().findElement(By.xpath("//button[.='Log in']"));
+    public WebElement userNameInputBox = Driver.getDriver().findElement(By.id("login"));
+    public WebElement passwordInputBox = Driver.getDriver().findElement(By.id("password"));
+    public WebElement submitButton = Driver.getDriver().findElement(By.xpath("//button[.='Log in']"));
 
-    public void login(String userType){
+    public void login(String userType) {
 
-        switch (userType){
+        switch (userType) {
 
             case "POS":
                 userNameInputBox.sendKeys(ConfigurationReader.getProperty("pos_manager_email"));
@@ -47,13 +47,13 @@ public abstract class BasePage{
 
     }
 
-    public static void clickNavBarHeaderTab(String tabName){
+    public static void clickNavBarHeaderTab(String tabName) {
 
         WebElement loadingBar = Driver.getDriver().findElement(By.xpath("//div[.='Loading']"));
 
         BrowserUtils.waitForInvisibilityOf(loadingBar);
 
-        Driver.getDriver().findElement(By.xpath("//li[@style='display: block;']/a/span[contains(text(),'"+tabName+"')]")).click();
+        Driver.getDriver().findElement(By.xpath("//li[@style='display: block;']/a/span[contains(text(),'" + tabName + "')]")).click();
 
     }
 

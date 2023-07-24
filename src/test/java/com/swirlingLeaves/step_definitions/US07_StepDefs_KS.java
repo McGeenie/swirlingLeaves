@@ -22,6 +22,7 @@ public class US07_StepDefs_KS extends BasePage {
     @Then("User clicks the {string} tab on the top of page and is launched to Quotations page")
     public void userClicksTheTabOnTheTopOfPageAndIsLaunchedToQuotationsPage(String sales) {
 
+
         clickNavBarHeaderTab(sales);
     }
 
