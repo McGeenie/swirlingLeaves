@@ -1,21 +1,17 @@
 package com.swirlingLeaves.step_definitions;
 
+
 import com.swirlingLeaves.pages.InboxPage_KS;
 import com.swirlingLeaves.pages.LoginPage;
 import com.swirlingLeaves.pages.QuotationsPage_KS;
-import com.swirlingLeaves.utilities.BrowserUtils;
-import com.swirlingLeaves.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 
-public class US07_StepDefs_KS {
+
+public class US07_StepDefs_KS{
 
     LoginPage loginPage = new LoginPage();
     InboxPage_KS inboxPage_ks = new InboxPage_KS();
@@ -24,21 +20,18 @@ public class US07_StepDefs_KS {
     @Given("{string} manager is logged in and on the inbox page")
     public void managerIsLoggedInAndOnTheInboxPage(String userType) {
 
-
         loginPage.login(userType);
 
     }
+    @Then("User clicks the {string} tab on the top of page and is launched to Quotations page")
+    public void userClicksTheTabOnTheTopOfPageAndIsLaunchedToQuotationsPage(String sales) {
 
-    @Then("User clicks the Sales tab on the top of page and is launched to Quotations page")
-    public void userClicksTheSalesTabOnTheTopOfPageAndIsLaunchedToQuotationsPage() {
-
-        inboxPage_ks.clickSalesTab();
-
+        inboxPage_ks.clickNavBarHeaderTab(sales);
     }
+
     @And("User sees actual number of columns is equal to expected number of {int} columns on the page")
 
     public void userSeesActualNumberOfColumnsIsEqualToExpectedNumberOfColumnsOnThePage(int expectedNumber) {
-
 
         Assert.assertTrue(quotationsPage_ks.actualNumberOfColumns() == expectedNumber);
 
