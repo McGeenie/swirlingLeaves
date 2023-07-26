@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PointOfSalePage_KS {
+public class PointOfSalePage_KS extends BasePage {
 
     public PointOfSalePage_KS(){
         PageFactory.initElements(Driver.getDriver(),this);

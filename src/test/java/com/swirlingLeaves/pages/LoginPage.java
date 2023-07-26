@@ -33,16 +33,37 @@ public class LoginPage {
         // verification that we logged
     }
 
-    public void posManagerLogin(){
-        userName.sendKeys(ConfigurationReader.getProperty("pos_manager_email"));
-        password.sendKeys(ConfigurationReader.getProperty("pos_manager_password"));
-        submit.click();
-    }
-    public void salesManagerLogin(){
+    public void login(String userType){
 
-        userName.sendKeys(ConfigurationReader.getProperty("sales_manager_email"));
-        password.sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
-        submit.click();
+        switch (userType){
+
+            case "POS":
+                userName.sendKeys(ConfigurationReader.getProperty("pos_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("pos_manager_password"));
+                submit.click();
+                break;
+            case "Sales":
+                userName.sendKeys(ConfigurationReader.getProperty("sales_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("sales_manager_password"));
+                submit.click();
+                break;
+            case "CRM":
+                userName.sendKeys(ConfigurationReader.getProperty("crm_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("crm_manager_password"));
+                submit.click();
+                break;
+            case "Inventory":
+                userName.sendKeys(ConfigurationReader.getProperty("inventory_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("inventory_manager_password"));
+                submit.click();
+                break;
+            case "Expense":
+                userName.sendKeys(ConfigurationReader.getProperty("expenses_manager_email"));
+                password.sendKeys(ConfigurationReader.getProperty("expenses_manager_password"));
+                submit.click();
+                break;
+        }
+
     }
 
     @FindBy(xpath= "//input[@required='required']")
