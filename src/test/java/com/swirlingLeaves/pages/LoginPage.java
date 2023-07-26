@@ -2,6 +2,7 @@ package com.swirlingLeaves.pages;
 
 import com.swirlingLeaves.utilities.ConfigurationReader;
 import com.swirlingLeaves.utilities.Driver;
+import junit.framework.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -50,8 +51,10 @@ public class LoginPage {
         boolean errorMessageDisplayed;
         if(pleaseFillOutThisFieldErrorMessage.isEnabled() && (userName.getText().isEmpty() || password.getText().isEmpty())){
             errorMessageDisplayed = true;
+            Assert.assertTrue(true);
         }else{
             errorMessageDisplayed = false;
+            Assert.assertTrue(false);
         }
     }
 
