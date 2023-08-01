@@ -1,35 +1,23 @@
-@B29G31-206
 Feature: User should be able to log in using the correct credentials
 
-  User Story: As POS and CRM manager, I should be able to Login with valid credentials.
+  User Story: As sales manager and expenses manager, I should be able to Login with valid credentials.
 
-  Accounts are POS and CRM manager
+  Accounts are sales manger and expenses manager
 
   Background: User is already in the login page
     Given the user is on the login page
 
 
   @B29G31-203
-  Scenario Outline: Positive Login with clicking
+  Scenario Outline: Positive Login as sales manager
     When user enters "<username>" username and "<password>" password
     Then user clicks on the Log in button
     Then user should gain access to their inbox
 
     Examples:
       | username                    | password         |
-      | posmanager55@info.com       | posmanager       |
-      | eventscrmmanager12@info.com | eventscrmmanager |
-
-  @B29G31-264
-  Scenario Outline: Positive Login with pressing ENTER
-    When user enters "<username>" username and "<password>" password
-    Then user presses the ENTER key
-    Then user should gain access to their inbox
-
-    Examples:
-      | username                    | password         |
-      | posmanager55@info.com       | posmanager       |
-      | eventscrmmanager12@info.com | eventscrmmanager |
+      | salesmanager55@info.com     | salesmanger      |
+      | expensesmanager12@info.com  | expensesmanager  |
 
   @B29G31-204
   Scenario Outline: Negative Login
@@ -39,10 +27,10 @@ Feature: User should be able to log in using the correct credentials
 
     Examples:
       | Username                     | Password         |
-      | posmanager550@info.com       | posmanager       |
-      | eventscrmmanager200@info.com | eventscrmmanager |
-      | posmanager55@info.com        | posmanage        |
-      | eventscrmmanager12@info.com  | eventscrmanager  |
+      | salesmanager550@info.com     | salesmanger      |
+      | expensesmanager200@info.com  | expensesmanager  |
+      | salesmanager55@info.com      | salesmanager     |
+      | expensesmanager12@info.com   | expensesmanager  |
 
   @B29G31-205
   Scenario Outline: Incomplete Login
@@ -52,10 +40,5 @@ Feature: User should be able to log in using the correct credentials
 
     Examples:
       | Username              | Password   |
-      | posmanager50@info.com |            |
-      |                       | posmanager |
-
-
-
-
-
+      | salesmanager50@info.com |            |
+      |                       | salesmanger |
