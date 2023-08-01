@@ -1,4 +1,4 @@
-
+@wip
 Feature: Default
 
   Agile Story : US04 As a Posmanager, I should be able to create events on my calendar from "Calendar" module
